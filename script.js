@@ -53,6 +53,7 @@ function render(){
     snake.forEach(segment => {
          blocks[`${segment.x}-${segment.y}`].classList.add("fill");
     });
+    blocks[`${snake[0].x}-${snake[0].y}`].classList.add("head");
 
 }
 
@@ -76,6 +77,7 @@ function moveSnake(){
 
     snake.forEach(segment => {
         blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
+        blocks[`${snake[0].x}-${snake[0].y}`].classList.remove("head");
     });
     snake.unshift(head);
     snake.pop();
